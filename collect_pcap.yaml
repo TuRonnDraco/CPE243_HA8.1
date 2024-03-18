@@ -1,0 +1,36 @@
+---
+-  hosts: all
+   become: true
+   pre_tasks:
+
+   -  name: Install Updates (Ubuntu)
+      apt:
+        upgrade: dist
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+-  hosts: Control_Node
+   become: true
+   tasks:
+
+   -  name: Install TCPDump (Network Packet Capturing Tool)
+      apt:
+        name: tcpdump
+        state: present
+
+   -  name: Packet Capturing in Control Node using TCPDump
+      shell: sudo tcpdump -c 5 -n -w traffic.pcap
+
+   -  name: Extract and Convert the PCAP file into a readable format
+      shell: sudo tcpdump -r traffic.pcap > traffic.txt
+
+   -  name: Fetch the PCAP File from the Remote Host
+      fetch:
+        src: traffic.pcap
+        dest: /home/seruelas/CPE243_HA8.1/files
+
+   -  name: Fetch the extracted converted PCAP file from the Remote Host
+      fetch:
+        src: traffic.txt
+        dest: /home/seruelas/CPE243_HA8.1/files
+

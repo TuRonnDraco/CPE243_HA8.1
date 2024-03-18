@@ -1,0 +1,5 @@
+09:23:28.461646 IP ControlNode.42639 > 10.6.15.200.domain: 15258+ [1au] AAAA? connectivity-check.ubuntu.com. (58)
+09:23:28.465591 IP 10.6.15.200.domain > ControlNode.42639: 15258 12/0/1 AAAA 2620:2d:4000:1::97, AAAA 2620:2d:4000:1::2b, AAAA 2620:2d:4000:1::23, AAAA 2620:2d:4002:1::196, AAAA 2001:67c:1562::23, AAAA 2620:2d:4002:1::198, AAAA 2620:2d:4000:1::96, AAAA 2620:2d:4000:1::2a, AAAA 2001:67c:1562::24, AAAA 2620:2d:4000:1::98, AAAA 2620:2d:4000:1::22, AAAA 2620:2d:4002:1::197 (394)
+09:23:34.052578 ARP, Request who-has _gateway tell ControlNode, length 28
+09:23:34.052762 ARP, Reply _gateway is-at 52:54:00:12:35:02 (oui Unknown), length 46
+09:24:57.567192 IP ControlNode.59497 > 10.6.15.200.domain: 55488+ [1au] A? connectivity-check.ubuntu.com. (58)
